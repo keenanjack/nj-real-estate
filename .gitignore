@@ -1,2 +1,4 @@
 seed
 .DS_Store
+scripts
+.vscode/
