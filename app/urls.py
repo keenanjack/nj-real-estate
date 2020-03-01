@@ -16,8 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
+from django.conf import settings
 
 urlpatterns = [
-    url(r'^njrealestate/', include('njrealestate.urls')),
+    url('api/njrealestate/', include('njrealestate.urls')),
+    url('api/dcrealestate/', include('dcrealestate.urls')),
     path('admin/', admin.site.urls),
 ]
+
+if settings.DEBUG:
+   import debug_toolbar
+   urlpatterns += [
+       url(r'^__debug__/', include(debug_toolbar.urls)),
+   ]
