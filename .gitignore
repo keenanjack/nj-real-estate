@@ -3,3 +3,4 @@ seed
 scripts
 .vscode/
 venv
+data
